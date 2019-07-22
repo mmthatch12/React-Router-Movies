@@ -32,12 +32,14 @@ function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
     <div className="movie-card">
-      <h2><Link to={`/movies/${movie.id}`}>{title}</Link></h2>
-      <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
+      <Link to={`/movies/${movie.id}`}>
+        <h2>{title}</h2>
+        <div className="movie-director">
+          Director: <em>{director}</em>
+        </div>
+        <div className="movie-metascore">
+          Metascore: <strong>{metascore}</strong>
+      
       </div>
       <h3>Actors</h3>
 
@@ -46,6 +48,7 @@ function MovieDetails({ movie }) {
           {star}
         </div>
       ))}
+      </Link>
     </div>
   );
 }
